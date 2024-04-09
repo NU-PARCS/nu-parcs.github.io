@@ -1,3 +1,6 @@
+---
+layout: null
+---
 # Need Finding for Public Robot
 
 You are being asked to participate in a research study being done by Prof. Zhi Tan at Northeastern University. Your participation is voluntary, and you are free to withdraw at any time.
