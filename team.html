@@ -1,55 +1,101 @@
 <div class="page">
     <h2>Team</h2>
-    <p>We are always looking for highly motivated students to join our team. If you are interested in joining us, <a href="mailto:you@university.edu">please reach
-            out</a>.</p>
+    <p>We are always looking for highly motivated students to join our team. If you are interested in joining us, <a href="mailto:mail@parcslab.fyi">please reach
+            out to us</a>.</p>
 
     <h3>Current Members</h3>
-    <div class="team-grid">
-        <div class="card">
-            <a href="#" target="_blank">
-                <div class="avatar"><img src="images/member1.jpg" alt="Name 1"></div>
+    <div class="team-grid" id="current-team">
+        <div class="card" data-rank="1">
+            <a href="https://zhi.fyi/" target="_blank">
+                <div class="avatar"><img src="assets/team/zhi.jpg" alt="Zhi Tan"></div>
             </a>
-            <div class="name"><a href="#" target="_blank">Name 1</a></div>
+            <div class="name">Zhi Tan</a></div>
             <div class="role">Principal Investigator</div>
         </div>
-        <div class="card">
+        <div class="card" data-rank="2">
             <a href="#" target="_blank">
-                <div class="avatar"><img src="images/member2.jpg" alt="Name 2"></div>
+                <div class="avatar"><img src="assets/team/willy.jpg" alt="Wo Wei (Willy) Lin"></div>
             </a>
-            <div class="name"><a href="#" target="_blank">Name 2</a></div>
-            <div class="role">Postdoctoral Researcher</div>
-        </div>
-        <div class="card">
-            <a href="#" target="_blank">
-                <div class="avatar"><img src="images/member3.jpg" alt="Name 3"></div>
-            </a>
-            <div class="name"><a href="#" target="_blank">Name 3</a></div>
+            <div class="name">Wo Wei (Willy) Lin</a></div>
             <div class="role">PhD Student</div>
         </div>
-        <div class="card">
+        <div class="card" data-rank="2">
             <a href="#" target="_blank">
-                <div class="avatar"><img src="images/member4.jpg" alt="Name 4"></div>
+                <div class="avatar"><img src="assets/team/drake.jpg" alt="Drake Moore"></div>
             </a>
-            <div class="name"><a href="#" target="_blank">Name 4</a></div>
+            <div class="name">Drake Moore</a></div>
             <div class="role">PhD Student</div>
         </div>
-        <div class="card">
-            <a href="#" target="_blank">
-                <div class="avatar"><img src="images/member5.jpg" alt="Name 5"></div>
+        <div class="card" data-rank="2">
+            <a href="https://szeyireinachan.github.io/" target="_blank">
+                <div class="avatar"><img src="assets/team/reina.JPG" alt="Reina Chan"></div>
             </a>
-            <div class="name"><a href="#" target="_blank">Name 5</a></div>
+            <div class="name">Reina Szeyi Chan</a></div>
+            <div class="role">PhD Student</div>
+        </div>
+        <div class="card" data-rank="3">
+            <a href="srijanpokharel.com" target="_blank">
+                <div class="avatar"><img src="assets/team/srijan.jpg" alt="Srijan Pokharel"></div>
+            </a>
+            <div class="name">Srijan Pokharel</a></div>
             <div class="role">Masters Student</div>
+        </div>
+        <div class="card" data-rank="4">
+            <a href="#" target="_blank">
+                <div class="avatar"><img src="assets/team/maya.jpeg" alt="Maya Lampi"></div>
+            </a>
+            <div class="name">Maya Lampi</a></div>
+            <div class="role">Undergraduate Student</div>
+        </div>
+        <div class="card" data-rank="4">
+            <a href="http://jadeni77.github.io/XiaobinMei/" target="_blank">
+                <div class="avatar"><img src="assets/team/xiaobin.jpeg" alt="Xiaobin (Jaden) Mei"></div>
+            </a>
+            <div class="name">Xiaobin (Jaden) Mei</a></div>
+            <div class="role">Undergraduate Student</div>
+        </div>
+        <div class="card" data-rank="4">
+            <a href="#" target="_blank">
+                <div class="avatar"><img src="assets/team/yueran.jpg" alt="Yueran Jia"></div>
+            </a>
+            <div class="name">Yueran Jia</a></div>
+            <div class="role">Undergraduate Student</div>
+        </div>
+        <div class="card" data-rank="4">
+            <a href="https://shlok12343.github.io/Shlok_Nanani_personal_portfolio/" target="_blank">
+                <div class="avatar"><img src="assets/team/shlok.jpg" alt="Shlok Nanani"></div>
+            </a>
+            <div class="name">Shlok Nanani</a></div>
+            <div class="role">Undergraduate Student</div>
         </div>
     </div>
 
     <h3>Alumni</h3>
-    <div class="team-grid">
-        <div class="card">
+    <div class="team-grid" id="alumni">
+        <div class="card" data-rank="1">
             <a href="#" target="_blank">
-                <div class="avatar"><img src="images/alumni1.jpg" alt="Alumni Name"></div>
+                <div class="avatar"><img src="assets/team/sujendra.jpg" alt="Sujendra Gharat"></div>
             </a>
-            <div class="name"><a href="#" target="_blank">Alumni Name</a></div>
-            <div class="role">Now at [Organization]</div>
+            <div class="name"><a href="https://sujendra.netlify.app/" target="_blank">Sujendra Gharat</a></div>
+            <div class="role">Research Assistant</div>
         </div>
     </div>
+
+    <script>
+        // Sort team members by hierarchy using data-rank (1 = highest)
+        function sortTeamGrid(gridId) {
+            const grid = document.getElementById(gridId);
+            if (!grid) return;
+            const cards = Array.from(grid.querySelectorAll('.card'));
+            cards.sort((a, b) => {
+                const rankA = parseInt(a.getAttribute('data-rank') || '999', 10);
+                const rankB = parseInt(b.getAttribute('data-rank') || '999', 10);
+                return rankA - rankB;
+            });
+            cards.forEach(card => grid.appendChild(card));
+        }
+
+        sortTeamGrid('current-team');
+        sortTeamGrid('alumni');
+    </script>
 </div>
